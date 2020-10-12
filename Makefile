@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+         #
+#    By: mhori <mhori@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 11:03:08 by mhori             #+#    #+#              #
-#    Updated: 2020/09/13 01:29:38 by mhori            ###   ########.fr        #
+#    Updated: 2020/10/12 16:45:02 by mhori            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,12 +54,15 @@ LIBS = 	Libft/libft.a \
 			libmlx.dylib
 
 all: $(NAME)
+	$(MAKE) -C ./Libft
 
 clean:
 	rm -f $(OBJS)
+	$(MAKE) clean -C ./Libft
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) fclean -C ./Libft
 
 bclean:
 	rm -f *.bmp
