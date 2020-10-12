@@ -6,13 +6,13 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 19:53:28 by mhori             #+#    #+#             */
-/*   Updated: 2020/10/12 18:46:14 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:50:16 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
-# define MAX 1
+# define MAX 25
 
 typedef struct	s_r
 {
