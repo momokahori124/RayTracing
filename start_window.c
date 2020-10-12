@@ -6,7 +6,7 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 13:21:34 by mhori             #+#    #+#             */
-/*   Updated: 2020/08/17 13:22:23 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 17:39:04 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			handle_key(int k, t_objs *objs)
 	static int i;
 
 	if (k == 53)
-		return (exit_program());
+		return (exit_program(objs));
 	if (k == KEYCODE_RIGHT)
 		i++;
 	if (!(k == 53 || k == KEYCODE_RIGHT))
@@ -40,8 +40,9 @@ int			handle_key(int k, t_objs *objs)
 	return (0);
 }
 
-int			exit_program(void)
+int			exit_program(t_objs *objs)
 {
+	free_members(objs);
 	exit(0);
 	return (0);
 }
@@ -54,7 +55,7 @@ void		mlx_main(t_objs objs)
 	mlx_clear_window(objs.mlx, objs.mlx_win);
 	mlx_put_image_to_window(objs.mlx, objs.mlx_win, objs.img[num], 0, 0);
 	mlx_hook(objs.mlx_win, 2, 1L << 0, handle_key, &objs);
-	mlx_hook(objs.mlx_win, 17, 1L << 17, exit_program, 0);
+	mlx_hook(objs.mlx_win, 17, 1L << 17, exit_program, &objs);
 	mlx_loop(objs.mlx);
 }
 

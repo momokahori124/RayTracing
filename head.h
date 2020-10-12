@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   head.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 19:00:10 by mhori             #+#    #+#             */
-/*   Updated: 2020/09/13 01:29:18 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 17:31:41 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ double		*cross_product(double a[3], double b[3]);
 void		cross_product2(double ret[3], double a[3], double b[3]);
 int			rgb_to_int(int r, int b, int g);
 void		input_t(t_objs *objs, int i, double t_tmp);
+void		input_error(t_objs objs);
 int			get_next_line(int fd, char **line);
 int			vec_equal(double a[3], double b[3]);
 void		input_r(char *s, t_objs *objs);
 void		input_a(char *s, t_objs *objs);
 void		input_c(char *s, t_objs *objs);
 void		input_l(char *s, t_objs *objs);
+void		free_members(t_objs *objs);
 void		input_sp(char *s, t_objs *objs);
 void		input_pl(char *s, t_objs *objs);
 void		input_sq(char *s, t_objs *objs);

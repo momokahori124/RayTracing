@@ -6,7 +6,7 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:58:39 by mhori             #+#    #+#             */
-/*   Updated: 2020/08/22 15:46:17 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 17:26:53 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ void	count_id(t_objs *objs, char *s)
 	objs->num[h(s)] += 1;
 	if (ft_strncmp(s, "R", 1) == 0)
 		objs->rac++;
+}
+
+void	input_error(t_objs objs)
+{
+	if (is_out_of_range(objs) == 1)
+		err_exit(ERR_OUT_OF_RANGE_N);
+	if (objs.rac != 1)
+		err_exit(ERR_RAC_N);
+	if (objs.error == 1)
+		err_exit(ERR_WRONG_INPUT_N);
+	if (objs.num[h("c")] == 0)
+		err_exit(ERR_NO_CAMERA_N);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 15:58:43 by mhori             #+#    #+#             */
-/*   Updated: 2020/09/13 01:10:36 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:00:14 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void		create_images(t_objs *objs)
 	objs->mlx_win =
 		mlx_new_window(objs->mlx, objs->r.x, objs->r.y, "window");
 	i = 0;
+	objs->addr = NULL;
 	while (i < objs->num[h("C")])
 	{
 		objs->img[i] =
@@ -51,6 +52,18 @@ void		create_images(t_objs *objs)
 		ft_mlx(objs, i);
 		i++;
 	}
+}
+
+void		free_members(t_objs *objs)
+{
+	int i;
+
+	// free(objs->mlx);これを入れるとなんかroot leakになる
+	// free(objs->mlx_win);これを入れるとなんかroot leakになる
+	// free(objs->addr);これを入れると確保してないメモリフリーしてるよって言われる
+	i = -1;
+	while (++i < objs->num[h("C")])
+		free(objs->img[i]);
 }
 
 int			main(int argc, char *argv[])
@@ -66,18 +79,12 @@ int			main(int argc, char *argv[])
 		|| ft_strlen(argv[2]) != 6))
 		err_exit(ERR_WRONG_OPTION_N);
 	input_data(argv[1], &objs);
-	if (is_out_of_range(objs) == 1)
-		err_exit(ERR_OUT_OF_RANGE_N);
-	if (objs.rac != 1)
-		err_exit(ERR_RAC_N);
-	if (objs.error == 1)
-		err_exit(ERR_WRONG_INPUT_N);
-	if (objs.num[h("c")] == 0)
-		err_exit(ERR_NO_CAMERA_N);
+	input_error(objs);
 	create_images(&objs);
 	if (argc == 2)
 		start_window(objs);
 	if (argc == 3)
 		start_bmp(objs);
+	free_members(&objs);
 	return (0);
 }
