@@ -6,7 +6,7 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:58:39 by mhori             #+#    #+#             */
-/*   Updated: 2020/10/12 17:26:53 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:47:39 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,17 @@ void	input_error(t_objs objs)
 		err_exit(ERR_WRONG_INPUT_N);
 	if (objs.num[h("c")] == 0)
 		err_exit(ERR_NO_CAMERA_N);
+}
+
+int		is_over_max(t_objs objs)
+{
+	if (objs.num[h("c")] >= MAX ||
+		objs.num[h("l")] >= MAX ||
+		objs.num[h("sp")] >= MAX ||
+		objs.num[h("pl")] >= MAX ||
+		objs.num[h("sq")] >= MAX ||
+		objs.num[h("cy")] >= MAX ||
+		objs.num[h("tr")] >= MAX)
+		return (1);
+	return (0);
 }

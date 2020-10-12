@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 19:48:33 by mhori             #+#    #+#             */
-/*   Updated: 2020/09/13 01:41:07 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:42:25 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	err_exit(int n);
 # define ERR_NO_CAMERA "Error : No camera.\n"
 # define ERR_VECTOR "Error : Vector norm is zero.\n"
 # define ERR_OUT_OF_RANGE "Error : Some variable is out of range.\n"
+# define ERR_OVER_MAX "Error : Some objects are over MAX.\n"
 # define ERR_INVALID_FILE_N -1
 # define ERR_WRONG_NUMBER_ARGUMENT_N -2
 # define ERR_N -3
@@ -58,5 +59,6 @@ void	err_exit(int n);
 # define ERR_NO_CAMERA_N -20
 # define ERR_VECTOR_N -21
 # define ERR_OUT_OF_RANGE_N -22
+# define ERR_OVER_MAX_N -23
 
 #endif

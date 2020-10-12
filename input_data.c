@@ -6,7 +6,7 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 17:10:50 by mhori             #+#    #+#             */
-/*   Updated: 2020/08/25 22:19:36 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:48:56 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	input_data(char *filename, t_objs *objs)
 	while ((ret = get_next_line(fd, &line)) > 0)
 		count_free(objs, &line);
 	count_free(objs, &line);
+	if (is_over_max(*objs) == 1)
+		err_exit(ERR_OVER_MAX_N);
 	close(fd);
 	if ((fd = open(filename, O_RDONLY)) < 2)
 		err_exit(CANT_OPEN_N);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 19:53:28 by mhori             #+#    #+#             */
-/*   Updated: 2020/09/12 18:29:38 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:46:14 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
-# define MAX 25
+# define MAX 1
 
 typedef struct	s_r
 {

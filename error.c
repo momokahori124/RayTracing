@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 15:46:49 by mhori             #+#    #+#             */
-/*   Updated: 2020/09/13 01:32:45 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:41:53 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	err_exit(int n)
 		ft_putstr(ERR_NO_CAMERA);
 	if (n == ERR_VECTOR_N)
 		ft_putstr(ERR_VECTOR);
+	if (n == ERR_OVER_MAX_N)
+		ft_putstr(ERR_OVER_MAX);
 	err_exit_sub(n);
 	err_exit_sub2(n);
 	exit(n);

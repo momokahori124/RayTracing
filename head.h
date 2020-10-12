@@ -6,7 +6,7 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 19:00:10 by mhori             #+#    #+#             */
-/*   Updated: 2020/10/12 17:31:41 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/12 18:46:07 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ double		inner_product(double a[3], double b[3]);
 double		*cross_product(double a[3], double b[3]);
 void		cross_product2(double ret[3], double a[3], double b[3]);
 int			rgb_to_int(int r, int b, int g);
+int			is_over_max(t_objs objs);
 void		input_t(t_objs *objs, int i, double t_tmp);
 void		input_error(t_objs objs);
 int			get_next_line(int fd, char **line);
