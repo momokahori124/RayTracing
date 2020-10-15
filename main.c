@@ -58,12 +58,10 @@ void		free_members(t_objs *objs)
 {
 	int i;
 
-	// free(objs->mlx);これを入れるとなんかroot leakになる
-	// free(objs->mlx_win);これを入れるとなんかroot leakになる
-	// free(objs->addr);これを入れると確保してないメモリフリーしてるよって言われる
+	mlx_destroy_window(objs->mlx, objs->mlx_win);
 	i = -1;
 	while (++i < objs->num[h("C")])
-		free(objs->img[i]);
+		mlx_destroy_image(objs->mlx, objs->img[i]);
 }
 
 int			main(int argc, char *argv[])
@@ -86,5 +84,6 @@ int			main(int argc, char *argv[])
 	if (argc == 3)
 		start_bmp(objs);
 	free_members(&objs);
+	while (1);
 	return (0);
 }
