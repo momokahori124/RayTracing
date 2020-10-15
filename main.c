@@ -84,6 +84,5 @@ int			main(int argc, char *argv[])
 	if (argc == 3)
 		start_bmp(objs);
 	free_members(&objs);
-	while (1);
 	return (0);
 }
