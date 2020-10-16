@@ -6,14 +6,14 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 19:48:33 by mhori             #+#    #+#             */
-/*   Updated: 2020/10/12 18:42:25 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/16 12:54:38 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_H
 # define ERROR_H
 
-#include "struct.h"
+# include "struct.h"
 
 void	err_exit(int n, t_objs *objs);
 # define ERR_INVALID_FILE "Error : Invalid file.\n"
@@ -26,15 +26,15 @@ void	err_exit(int n, t_objs *objs);
 # define FINISH "Finish : No more image.\n"
 # define CANT_OPEN "Error : Can't open file.\n"
 # define ERR_MALLOC "Error : Can't allocate memory.\n"
-# define ERR_R "Error : Lack of information of R.\n"
-# define ERR_A "Error : Lack of information of A.\n"
-# define ERR_C "Error : Lack of information of C.\n"
-# define ERR_CY "Error : Lack of information of cy.\n"
-# define ERR_L "Error : Lack of information of l.\n"
-# define ERR_SP "Error : Lack of information of sp.\n"
-# define ERR_SQ "Error : Lack of information of sq.\n"
-# define ERR_TR "Error : Lack of information of tr.\n"
-# define ERR_PL "Error : Lack of information of pl.\n"
+# define ERR_R "Error : Something wrong with information of R.\n"
+# define ERR_A "Error : Something wrong with information of A.\n"
+# define ERR_C "Error : Something wrong with information of C.\n"
+# define ERR_CY "Error : Something wrong with information of cy.\n"
+# define ERR_L "Error : Something wrong with information of l.\n"
+# define ERR_SP "Error : Something wrong with information of sp.\n"
+# define ERR_SQ "Error : Something wrong with information of sq.\n"
+# define ERR_TR "Error : Something wrong with information of tr.\n"
+# define ERR_PL "Error : Something wrong with information of pl.\n"
 # define ERR_NO_CAMERA "Error : No camera.\n"
 # define ERR_VECTOR "Error : Vector norm is zero.\n"
 # define ERR_OUT_OF_RANGE "Error : Some variable is out of range.\n"

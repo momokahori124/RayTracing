@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_objs2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhori <mhori@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 13:26:22 by mhori             #+#    #+#             */
-/*   Updated: 2020/09/11 17:46:03 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/16 13:12:53 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	input_sp(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->sp[i].rgb);
 	i++;
-	if (f != 7)
+	skip_white_space(&s);
+	if (f != 7 || *s)
 	{
 		objs->err_num = ERR_SP_N;
 		objs->flag = 1;
@@ -53,7 +54,8 @@ void	input_sq(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->sq[i].rgb);
 	i++;
-	if (f != 10)
+	skip_white_space(&s);
+	if (f != 10 || *s)
 	{
 		objs->err_num = ERR_SQ_N;
 		objs->flag = 1;
@@ -77,7 +79,8 @@ void	input_tr(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->tr[i].rgb);
 	i++;
-	if (f != 12)
+	skip_white_space(&s);
+	if (f != 12 || *s)
 	{
 		objs->err_num = ERR_TR_N;
 		objs->flag = 1;
@@ -99,7 +102,8 @@ void	input_pl(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->pl[i].rgb);
 	i++;
-	if (f != 9)
+	skip_white_space(&s);
+	if (f != 9 || *s)
 	{
 		objs->err_num = ERR_PL_N;
 		objs->flag = 1;

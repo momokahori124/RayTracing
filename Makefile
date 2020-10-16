@@ -6,7 +6,7 @@
 #    By: mhori <mhori@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 11:03:08 by mhori             #+#    #+#              #
-#    Updated: 2020/10/12 16:45:02 by mhori            ###   ########.fr        #
+#    Updated: 2020/10/16 13:08:21 by mhori            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,6 @@ LIBS = 	Libft/libft.a \
 			libmlx.dylib
 
 all: $(NAME)
-	$(MAKE) -C ./Libft
 
 clean:
 	rm -f $(OBJS)
@@ -78,7 +77,10 @@ norme:
 .c.o:
 	$(CC) $(CFLAGS) -c $<  -o $@
 
-$(NAME)	: $(OBJS)
+$(LIBS):
+	$(MAKE) -C ./Libft
+
+$(NAME): $(LIBS) $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(NAME)
 
 .PHONY: all clean fclean re bonus chmod bclean

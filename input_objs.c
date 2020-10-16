@@ -6,7 +6,7 @@
 /*   By: mhori <mhori@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 19:16:25 by mhori             #+#    #+#             */
-/*   Updated: 2020/08/23 19:12:01 by mhori            ###   ########.fr       */
+/*   Updated: 2020/10/16 13:24:48 by mhori            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	input_r(char *s, t_objs *objs)
 		objs->r.y = objs->r.y * 10 + *s - '0';
 		s++;
 	}
-	if (!(f[0] && f[1]))
+	if (!(f[0] && f[1]) || *s)
 	{
 		objs->err_num = ERR_R_N;
 		objs->flag = 1;
@@ -51,7 +51,8 @@ void	input_a(char *s, t_objs *objs)
 	f += get_double(&s, &(objs->a.ratio));
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->a.rgb);
-	if (f != 4)
+	skip_white_space(&s);
+	if (f != 4 || *s)
 	{
 		objs->err_num = ERR_A_N;
 		objs->flag = 1;
@@ -78,7 +79,8 @@ void	input_cy(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->cy[i].rgb);
 	i++;
-	if (f != 11)
+	skip_white_space(&s);
+	if (f != 11 || *s)
 	{
 		objs->err_num = ERR_CY_N;
 		objs->flag = 1;
@@ -101,7 +103,8 @@ void	input_c(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_double(&s, &(objs->c[i].degree));
 	i++;
-	if (f != 7)
+	skip_white_space(&s);
+	if (f != 7 || *s)
 	{
 		objs->err_num = ERR_C_N;
 		objs->flag = 1;
@@ -123,7 +126,8 @@ void	input_l(char *s, t_objs *objs)
 	skip_white_space(&s);
 	f += get_coordinate(&s, objs->l[i].rgb);
 	i++;
-	if (f != 7)
+	skip_white_space(&s);
+	if (f != 7 || *s)
 	{
 		objs->err_num = ERR_L_N;
 		objs->flag = 1;
