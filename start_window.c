@@ -29,14 +29,14 @@ int			handle_key(int k, t_objs *objs)
 	if (k == KEYCODE_RIGHT)
 		i++;
 	if (!(k == 53 || k == KEYCODE_RIGHT))
-		err_exit(ERR_KEY_N);
+		err_exit(ERR_KEY_N, objs);
 	if (i < objs->num[h("C")])
 	{
 		mlx_clear_window(objs->mlx, objs->mlx_win);
 		mlx_put_image_to_window(objs->mlx, objs->mlx_win, objs->img[i], 0, 0);
 	}
 	else
-		err_exit(FINISH_N);
+		err_exit(FINISH_N, objs);
 	return (0);
 }
 
@@ -61,8 +61,10 @@ void		mlx_main(t_objs objs)
 
 int			start_window(t_objs objs)
 {
+	objs.mlx_win =
+		mlx_new_window(objs.mlx, objs.r.x, objs.r.y, "window");
 	if (objs.error == 1)
-		err_exit(ERR_WRONG_INPUT_N);
+		err_exit(ERR_WRONG_INPUT_N, &objs);
 	mlx_main(objs);
 	return (1);
 }

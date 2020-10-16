@@ -20,10 +20,12 @@ double		inner_product(double a[3], double b[3])
 double		*cross_product(double a[3], double b[3])
 {
 	double	*ret;
+	t_objs	objs;
 
+	objs = (t_objs){0};
 	ret = (double *)malloc(sizeof(double) * 3);
 	if (!ret)
-		err_exit(ERR_MALLOC_N);
+		err_exit(ERR_MALLOC_N, &objs);
 	ret[0] = a[1] * b[2] - a[2] * b[1];
 	ret[1] = a[2] * b[0] - a[0] * b[2];
 	ret[2] = a[0] * b[1] - a[1] * b[0];

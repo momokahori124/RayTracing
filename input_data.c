@@ -17,7 +17,7 @@ void	check_data(t_objs *objs)
 	int	display_size[2];
 
 	if (objs->flag == 1)
-		err_exit(objs->err_num);
+		err_exit(objs->err_num, objs);
 	mlx_get_screen_size(objs->mlx, &(display_size[0]), &(display_size[1]));
 	if (objs->r.x > display_size[0])
 		objs->r.x = display_size[0] - 30;
@@ -68,15 +68,15 @@ void	input_data(char *filename, t_objs *objs)
 
 	objs_num_init(objs);
 	if ((fd = open(filename, O_RDONLY)) < 2)
-		err_exit(CANT_OPEN_N);
+		err_exit(CANT_OPEN_N, objs);
 	while ((ret = get_next_line(fd, &line)) > 0)
 		count_free(objs, &line);
 	count_free(objs, &line);
 	if (is_over_max(*objs) == 1)
-		err_exit(ERR_OVER_MAX_N);
+		err_exit(ERR_OVER_MAX_N, objs);
 	close(fd);
 	if ((fd = open(filename, O_RDONLY)) < 2)
-		err_exit(CANT_OPEN_N);
+		err_exit(CANT_OPEN_N, objs);
 	while ((ret = get_next_line(fd, &line)) > 0)
 		input_free(objs, &line);
 	input_free(objs, &line);

@@ -28,8 +28,11 @@ int			check_file_name(char *s)
 
 void		check_vector_norm(double *v)
 {
+	t_objs objs;
+
+	objs = (t_objs){0};
 	if (vec_norm(v) == 0)
-		err_exit(ERR_VECTOR_N);
+		err_exit(ERR_VECTOR_N, &objs);
 }
 
 void		create_images(t_objs *objs)
@@ -37,8 +40,6 @@ void		create_images(t_objs *objs)
 	int i;
 
 	objs->mlx = mlx_init();
-	objs->mlx_win =
-		mlx_new_window(objs->mlx, objs->r.x, objs->r.y, "window");
 	i = 0;
 	objs->addr = NULL;
 	while (i < objs->num[h("C")])
@@ -58,10 +59,16 @@ void		free_members(t_objs *objs)
 {
 	int i;
 
-	mlx_destroy_window(objs->mlx, objs->mlx_win);
+	if (objs)
+		return ;
+	if (!objs->mlx_win)
+		mlx_destroy_window(objs->mlx, objs->mlx_win);
 	i = -1;
 	while (++i < objs->num[h("C")])
-		mlx_destroy_image(objs->mlx, objs->img[i]);
+	{
+		if (!objs->img[i])
+			mlx_destroy_image(objs->mlx, objs->img[i]);
+	}
 }
 
 int			main(int argc, char *argv[])
@@ -70,12 +77,12 @@ int			main(int argc, char *argv[])
 
 	objs = (t_objs){0};
 	if (argc < 2 || argc > 3)
-		err_exit(ERR_WRONG_NUMBER_ARGUMENT_N);
+		err_exit(ERR_WRONG_NUMBER_ARGUMENT_N, &objs);
 	if (check_file_name(argv[1]) == 0)
-		err_exit(ERR_INVALID_FILE_N);
+		err_exit(ERR_INVALID_FILE_N, &objs);
 	if (argc == 3 && (ft_strncmp(argv[2], "--save", 6) != 0
 		|| ft_strlen(argv[2]) != 6))
-		err_exit(ERR_WRONG_OPTION_N);
+		err_exit(ERR_WRONG_OPTION_N, &objs);
 	input_data(argv[1], &objs);
 	input_error(objs);
 	create_images(&objs);

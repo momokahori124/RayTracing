@@ -44,7 +44,7 @@ double		*get_inter_for_pl(double *v, t_objs *objs, double *t_tmp, int num)
 
 	ret = malloc(sizeof(double) * 3);
 	if (!ret)
-		err_exit(ERR_MALLOC_N);
+		err_exit(ERR_MALLOC_N, objs);
 	vec_minus(vv, objs->pl[num].p, objs->c[objs->c_num].p);
 	*t_tmp = inner_product(objs->pl[num].n, vv) /
 	inner_product(v, objs->pl[num].n);

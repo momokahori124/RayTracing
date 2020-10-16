@@ -92,7 +92,7 @@ double	*get_inter_for_tr(double *v, t_objs *objs, double *t_tmp, int num)
 
 	ret = malloc(sizeof(double) * 3);
 	if (!ret)
-		err_exit(ERR_MALLOC_N);
+		err_exit(ERR_MALLOC_N, objs);
 	vec_minus(r, objs->c[objs->c_num].p, objs->tr[num].a);
 	vec_minus(objs->tr_e1, objs->tr[num].b, objs->tr[num].a);
 	vec_minus(objs->tr_e2, objs->tr[num].c, objs->tr[num].a);

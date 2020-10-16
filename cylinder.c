@@ -20,7 +20,7 @@ double		*get_inter_for_cy(double *v, t_objs *objs, double *t, int num)
 
 	ret = malloc(sizeof(double) * 3);
 	if (!ret)
-		err_exit(ERR_MALLOC_N);
+		err_exit(ERR_MALLOC_N, objs);
 	s[0] = 1.0 / 0.0;
 	s[1] = 1.0 / 0.0;
 	s[2] = 1.0 / 0.0;

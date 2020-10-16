@@ -48,7 +48,7 @@ void	err_exit_sub(int n)
 		ft_putstr(ERR_OUT_OF_RANGE);
 }
 
-void	err_exit(int n)
+void	err_exit(int n, t_objs *objs)
 {
 	if (n == ERR_KEY_N)
 		ft_putstr(ERR_KEY);
@@ -70,5 +70,6 @@ void	err_exit(int n)
 		ft_putstr(ERR_OVER_MAX);
 	err_exit_sub(n);
 	err_exit_sub2(n);
+	free_members(objs);
 	exit(n);
 }

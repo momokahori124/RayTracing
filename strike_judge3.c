@@ -130,7 +130,7 @@ double	*get_inter_for_sq(double *v, t_objs *objs, double *t, int num)
 
 	ret = malloc(sizeof(double) * 3);
 	if (!ret)
-		err_exit(ERR_MALLOC_N);
+		err_exit(ERR_MALLOC_N, objs);
 	judge_for_sq(v, objs, num, t);
 	k = 0;
 	while (k < 3)

@@ -53,13 +53,13 @@ void	count_id(t_objs *objs, char *s)
 void	input_error(t_objs objs)
 {
 	if (is_out_of_range(objs) == 1)
-		err_exit(ERR_OUT_OF_RANGE_N);
+		err_exit(ERR_OUT_OF_RANGE_N, &objs);
 	if (objs.rac != 1)
-		err_exit(ERR_RAC_N);
+		err_exit(ERR_RAC_N, &objs);
 	if (objs.error == 1)
-		err_exit(ERR_WRONG_INPUT_N);
+		err_exit(ERR_WRONG_INPUT_N, &objs);
 	if (objs.num[h("c")] == 0)
-		err_exit(ERR_NO_CAMERA_N);
+		err_exit(ERR_NO_CAMERA_N, &objs);
 }
 
 int		is_over_max(t_objs objs)

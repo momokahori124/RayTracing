@@ -21,10 +21,10 @@ void	my_mlx_put_to_bmp(char *name, t_objs objs)
 	size = objs.r.x * objs.r.y * 3;
 	data = malloc(size + HEADER_SIZE);
 	if (!data)
-		err_exit(ERR_MALLOC_N);
+		err_exit(ERR_MALLOC_N, &objs);
 	insert_data(data, objs);
 	if ((fd = open(name, O_CREAT | O_RDWR, 0644)) < 2)
-		err_exit(CANT_OPEN_N);
+		err_exit(CANT_OPEN_N, &objs);
 	write(fd, data, size + HEADER_SIZE);
 	free(data);
 	close(fd);

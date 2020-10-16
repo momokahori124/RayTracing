@@ -13,7 +13,9 @@
 #ifndef ERROR_H
 # define ERROR_H
 
-void	err_exit(int n);
+#include "struct.h"
+
+void	err_exit(int n, t_objs *objs);
 # define ERR_INVALID_FILE "Error : Invalid file.\n"
 # define ERR_WRONG_NUMBER_ARGUMENT "Error : Wrong number of arguments.\n"
 # define ERR "Error : Something happened.\n"
