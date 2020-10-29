@@ -1,6 +1,5 @@
-# RayTracing
-
-42tokyoの課題。
+<h1 align="center">Ray Tracing</h1>
+<p align="center">42tokyoの課題。BlenderのようなものをC言語とminilibxで実装しました。</p>
 
 Ray Tracingとは、CG技法の一つ。
 物体やカメラの情報が入ったテキストファイルを読み込んで、
@@ -8,11 +7,15 @@ Ray Tracingとは、CG技法の一つ。
 それをスクリーンという平面に射影することによって
 写真のような画像を取得する。
 
+- minilibx (https://github.com/42Paris/minilibx-linux)
+
 # subject 概要
 
 設定ファイルを読み込むと、物体とカメラの情報を元に画像を生成する。
-./miniRT test.rt でその画像を表示
-./miniRT test.rt --save でその画像をbmpファイルに保存する。
+
+`./miniRT test.rt `でその画像を表示
+
+`./miniRT test.rt --save `でその画像をbmpファイルに保存する。
 
 # Usage
 
@@ -20,7 +23,7 @@ Ray Tracingとは、CG技法の一つ。
 
 `./miniRT <review/---/---.rt> `
 
-# Error managemen
+# Error management
 
 ・ファイルがinvalidな時
 （.rtで終わってない時、rtファイルではない時、引数の個数が違う時、ファイルが存在しない時など）
