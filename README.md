@@ -1,5 +1,5 @@
-<h1 align="center">Ray Tracing</h1>
-<p align="center">42tokyoの課題。BlenderのようなものをC言語とminilibxで実装しました。</p>
+# Ray Tracing
+42tokyoの課題。C言語とminilibxで実装しました。
 
 Ray Tracingとは、CG技法の一つ。
 物体やカメラの情報が入ったテキストファイルを読み込んで、
