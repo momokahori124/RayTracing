@@ -12,13 +12,11 @@
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRCS = 	main.c \
+SRCFILE = 	main.c \
 		get_double.c \
 		get_color.c \
 		get_color2.c \
 		get_color3.c \
-		GNL_success/get_next_line.c \
-		GNL_success/get_next_line_utils.c \
 		input_image.c \
 		input_image2.c \
 		strike_judge.c \
@@ -48,10 +46,16 @@ SRCS = 	main.c \
 		strike_judge2.c \
 		strike_judge3.c \
 		ft_mlx.c
+
+GNLS =	GNL_success/get_next_line.c \
+		GNL_success/get_next_line_utils.c
+GNLO = ${GNLS:.c=.o}
+SRCDIR = srcs/
+SRCS = $(addprefix $(SRCDIR), $(SRCFILE))
 OBJS = ${SRCS:.c=.o}
 NAME = miniRT
 LIBS = 	Libft/libft.a \
-			libmlx.dylib
+			libmlx.dylib 
 
 all: $(NAME)
 
@@ -75,12 +79,12 @@ norme:
 	norminette
 
 .c.o:
-	$(CC) $(CFLAGS) -c $<  -o $@
+	$(CC) $(CFLAGS) -c $<  -o $@ 
 
 $(LIBS):
 	$(MAKE) -C ./Libft
 
-$(NAME): $(LIBS) $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(NAME)
+$(NAME): $(OBJS) $(GNLO)
+	$(CC) $(OBJS) $(GNLO) $(CFLAGS) $(LIBS) -o $(NAME)
 
 .PHONY: all clean fclean re bonus chmod bclean
