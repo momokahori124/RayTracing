@@ -1,31 +1,18 @@
 # miniRT (Ray Tracing)
-42tokyoの課題。C言語とminilibxで実装しました。
 
-Ray Tracingとは、CG技法の一つ。
-物体やカメラの情報が入ったテキストファイルを読み込んで、
-物体を３次元空間に配置し、
-それをスクリーンという平面に射影することによって
-写真のような画像を取得する。
-
+A student project at 42tokyo. A minimal raytracing engine written by C and MiniLibX.
 - minilibx (https://github.com/42Paris/minilibx-linux)
 
-# subject 概要
+<img width="1268" alt="スクリーンショット 2020-11-21 22 47 33" src="https://user-images.githubusercontent.com/60100351/99878858-abb70600-2c4b-11eb-871c-690ee265e17b.png">
 
-設定ファイルを読み込むと、物体とカメラの情報を元に画像を生成する。
+# How to install and Use
 
-`./miniRT test.rt `でその画像を表示
+1. Clone the repository
+`git clone https://github.com/momokahori124/miniRT.git && cd miniRT`
+2. Compile it and make executable file named "miniRT"
+`make re && make clean`
+3. Choose rtfile and execute.
+`./miniRT "rt_files/[hoge.rt]"`
 
-`./miniRT test.rt --save `でその画像をbmpファイルに保存する。
-
-# Usage
-
-`git clone https://github.com/momokahori124/RayTracing.git && make re && make clean`
-
-`./miniRT review/[---.rt] `
-
-# Feature
-
-<img width="484" alt="スクリーンショット 2020-11-21 16 11 29" src="https://user-images.githubusercontent.com/60100351/99870198-94a8f180-2c14-11eb-95a1-bc784d76292e.png">
-
-<img width="587" alt="スクリーンショット 2020-11-21 16 12 32" src="https://user-images.githubusercontent.com/60100351/99870204-9f638680-2c14-11eb-9ab6-7671a1752916.png">
+You can save picture as a bmp file. Try save option like `./miniRT "rt_files/[hoge.rt]" --save`
 
