@@ -79,7 +79,7 @@ void	insert_data(char *data, t_objs objs)
 	int		j;
 	int		x;
 	int		y;
-	// int		k;
+	int		k;
 
 	insert_header(data, objs.r.x, objs.r.y);
 	i = HEADER_SIZE;
@@ -94,8 +94,8 @@ void	insert_data(char *data, t_objs objs)
 			*(data + i++) = *(objs.addr + j++);
 			*(data + i++) = *(objs.addr + j++);
 		}
-		// k = 0;
-		// while ((k++ + (objs.r.y * 3) % 4) != 0)
-		// 	*(data + i++) = 0;
+		k = 0;
+		while ((k++ + (objs.r.y * 3) % 4) != 0)
+			*(data + i++) = 0;
 	}
 }
