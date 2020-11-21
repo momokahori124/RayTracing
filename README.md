@@ -19,36 +19,9 @@ Ray Tracingとは、CG技法の一つ。
 
 # Usage
 
-`git clone https://github.com/momokahori124/RayTracing.git && make re`
+`git clone https://github.com/momokahori124/RayTracing.git && make re && make clean`
 
-`./miniRT <review/---/---.rt> `
-
-# Error management
-
-・ファイルがinvalidな時
-（.rtで終わってない時、rtファイルではない時、引数の個数が違う時、ファイルが存在しない時など）
-
-```
-./miniRT aaa
-./miniRT aaa.rt
-./miniRT
-./miniRT a a a a
-```
-
-・オプションが違う時
-```
-./miniRT valid_file.rt --ooo
-```
-
-・rtファイルがフォーマットに沿ってない時
- 
-```
-・255,255, 
-・情報が足りない場合
-・ベクトルの大きさが０の時
-・途中に変な文字が入っている時
-・最後に変な文字が入っている時
-```
+`./miniRT review/[---.rt] `
 
 # Feature
 
