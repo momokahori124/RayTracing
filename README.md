@@ -52,4 +52,7 @@ Ray Tracingとは、CG技法の一つ。
 
 # Feature
 
+<img width="484" alt="スクリーンショット 2020-11-21 16 11 29" src="https://user-images.githubusercontent.com/60100351/99870198-94a8f180-2c14-11eb-95a1-bc784d76292e.png">
+
+<img width="587" alt="スクリーンショット 2020-11-21 16 12 32" src="https://user-images.githubusercontent.com/60100351/99870204-9f638680-2c14-11eb-9ab6-7671a1752916.png">
 
