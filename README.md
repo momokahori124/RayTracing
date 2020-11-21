@@ -1,4 +1,4 @@
-# Ray Tracing
+# miniRT (Ray Tracing)
 42tokyoの課題。C言語とminilibxで実装しました。
 
 Ray Tracingとは、CG技法の一つ。
